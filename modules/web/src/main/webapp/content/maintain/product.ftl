@@ -101,31 +101,7 @@
     <td><label for="supplierReferenceCode">Код поставщика (SKU): </label></td>
     <td><@bg.ui.input path="form.supplierReferenceCode"/></td>
 </tr>
-<tr>
-    <td valign="top"><label for="supplierReferenceId">Страница описания: </label></td>
-    <td>
-    <@bg.ui.input path="form.supplierReferenceId" size=90>
-        <#if bg.ui.statusValue?has_content>
-            (<a id="supplierReferenceLink"
-                href="http://www.banggood.com${bg.ui.statusValue}"
-                target="_blank">открыть в новом окне</a>)</#if>
-    </@bg.ui.input>
-    </td>
-</tr>
-<tr>
-    <td valign="top">
-        <label for="supplierReferenceId">Информация поставщика: </label>
-    </td>
-    <td>
-        <div id="supplierInfo">
-            <span class="action">
-                <span><a href="#" onclick="loadSupplierDescription(); return false;">загрузить информацию</a></span>
-                <span class="progress" style="display: none"></span>
-            </span>
-            <span class="data"></span>
-        </div>
-    </td>
-</tr>
+
 <tr>
     <td colspan="2">
         <hr>

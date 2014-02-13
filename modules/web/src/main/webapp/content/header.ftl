@@ -4,14 +4,12 @@
     <tr>
         <td align="left">
             <div class="header-logo">
-                <a href="/"><img alt="logo" src="<@bg.ui.static "images/logo.png"/>"/></a>
-            <#--
-                            <a href="/" style="text-decoration: none !important;">
-                                <span class="first-letter">B</span><span>illion</span><span
-                                    class="first-letter">G</span><span>oods</span><span
-                                    class="domain"><sup>.ru</sup></span>
-                            </a>
-            -->
+                <a href="/" style="text-decoration: none !important;">
+                    <img alt="logo" src="<@bg.ui.static "images/logo.png"/>" style="vertical-align: bottom"/>
+
+                    <span class="first-letter">Э</span><span>ко</span><span
+                        class="first-letter">Е</span><span>шка</span>
+                </a>
             </div>
         </td>
 
@@ -38,16 +36,10 @@
                 <div class="divider">|</div>
             </@bg.security.authorized>
 
-                <div><a href="/warehouse/order/status">Отслеживание заказов</a></div>
-
-                <div class="divider">|</div>
-                <div><a href="/assistance/payment">Оплата</a></div>
-
-                <div class="divider">|</div>
-                <div><a href="/assistance/shipping">Доставка</a></div>
-
-                <div class="divider">|</div>
                 <div><a href="/assistance">Помощь</a></div>
+
+                <div class="divider">|</div>
+                <div><b><a href="/assistance/callback">Заказать обратный звонок</a></b></div>
             </div>
         </td>
     </tr>

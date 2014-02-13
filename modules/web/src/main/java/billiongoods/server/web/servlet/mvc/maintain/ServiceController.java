@@ -4,19 +4,13 @@ package billiongoods.server.web.servlet.mvc.maintain;
  * @author Sergey Klimenko (smklimenko@gmail.com)
  */
 
-import billiongoods.server.services.validator.ValidationManager;
 import billiongoods.server.web.services.ProductSymbolicService;
 import billiongoods.server.web.servlet.mvc.AbstractController;
-import org.hibernate.Query;
-import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.io.BufferedReader;
@@ -25,14 +19,12 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.List;
 import java.util.StringTokenizer;
 
 @Controller
 @RequestMapping("/maintain/service")
 public class ServiceController extends AbstractController {
 	private SessionFactory sessionFactory;
-	private ValidationManager validationManager;
 	private ProductSymbolicService symbolicConverter;
 
 	public ServiceController() {
@@ -83,66 +75,9 @@ public class ServiceController extends AbstractController {
 		return "/content/maintain/url";
 	}
 
-	@RequestMapping("validation")
-	public String validatePrices(Model model) {
-		model.addAttribute("active", validationManager.isInProgress());
-		model.addAttribute("summary", validationManager.getValidationSummary());
-		return "/content/maintain/validation";
-	}
-
-	@RequestMapping(value = "validation", method = RequestMethod.POST)
-	@Transactional(propagation = Propagation.REQUIRES_NEW)
-	public String validatePricesAction(@RequestParam("action") String action) {
-		if ("start".equalsIgnoreCase(action)) {
-			if (!validationManager.isInProgress()) {
-				validationManager.startValidation();
-			}
-		} else if ("stop".equalsIgnoreCase(action)) {
-			if (validationManager.isInProgress()) {
-				validationManager.cancelValidation();
-			}
-		} else if ("exchange".equalsIgnoreCase(action)) {
-			if (!validationManager.isInProgress()) {
-				validationManager.validateExchangeRate();
-			}
-		} else if ("broken".equalsIgnoreCase(action)) {
-			if (!validationManager.isInProgress()) {
-				validationManager.validateBroken();
-			}
-		}
-		return "redirect:/maintain/service/validation";
-	}
-
-	@RequestMapping(value = "convert")
-	@Transactional(propagation = Propagation.REQUIRES_NEW)
-	public String validateImages() throws Exception {
-		final Session session = sessionFactory.getCurrentSession();
-		final Query query = session.createQuery("select id, name from billiongoods.server.warehouse.impl.HibernateCategory");
-		final List list = query.list();
-		for (Object o : list) {
-			final Object[] v = (Object[]) o;
-
-			final Integer id = (Integer) v[0];
-			final String name = (String) v[1];
-
-			final String s = symbolicConverter.generateSymbolic(name);
-
-			final Query query1 = session.createQuery("update billiongoods.server.warehouse.impl.HibernateCategory set symbolic=:n where id=:id");
-			query1.setParameter("id", id);
-			query1.setParameter("n", s);
-			query1.executeUpdate();
-		}
-		return "/content/maintain/main";
-	}
-
 	@Autowired
 	public void setSessionFactory(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
-	}
-
-	@Autowired
-	public void setValidationManager(ValidationManager validationManager) {
-		this.validationManager = validationManager;
 	}
 
 	@Autowired

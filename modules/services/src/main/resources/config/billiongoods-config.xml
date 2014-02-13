@@ -70,44 +70,6 @@
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
 
-    <bean id="banggoodDataLoader" class="billiongoods.server.services.supplier.impl.banggod.BanggoodDataLoader"/>
-
-    <bean id="validationManager" class="billiongoods.server.services.validator.impl.HibernateValidationManager">
-        <property name="sessionFactory" ref="sessionFactory"/>
-        <property name="productManager" ref="productManager"/>
-
-        <property name="priceConverter" ref="priceConverter"/>
-
-        <property name="transactionManager" ref="transactionManager"/>
-
-        <property name="taskExecutor">
-            <bean class="org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler">
-                <property name="poolSize" value="1"/>
-                <property name="threadNamePrefix" value="PriceValidation"/>
-                <property name="waitForTasksToCompleteOnShutdown" value="true"/>
-            </bean>
-        </property>
-
-        <property name="dataLoader" ref="banggoodDataLoader"/>
-    </bean>
-
-    <bean id="productsImporter" class="billiongoods.server.services.supplier.impl.banggod.BanggoodProductImporter">
-        <property name="imageManager" ref="imageManager"/>
-        <property name="productManager" ref="productManager"/>
-        <property name="priceLoader" ref="banggoodDataLoader"/>
-        <property name="priceConverter" ref="priceConverter"/>
-        <property name="relationshipManager" ref="relationshipManager"/>
-        <property name="transactionManager" ref="transactionManager"/>
-
-        <property name="taskExecutor">
-            <bean class="org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler">
-                <property name="poolSize" value="1"/>
-                <property name="threadNamePrefix" value="ProductsImporter"/>
-                <property name="waitForTasksToCompleteOnShutdown" value="true"/>
-            </bean>
-        </property>
-    </bean>
-
     <bean id="payPalTransactionManager" class="billiongoods.server.services.paypal.impl.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
@@ -229,7 +191,6 @@
         <property name="accountManager" ref="accountManager"/>
         <property name="productManager" ref="productManager"/>
         <property name="trackingManager" ref="trackingManager"/>
-        <property name="validationManager" ref="validationManager"/>
     </bean>
 
     <bean class="billiongoods.server.services.notify.impl.center.NotificationOriginCenter">

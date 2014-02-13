@@ -80,12 +80,6 @@
     </tr>
 </table>
 
-<div class="unregistered" <#if shipmentRates.isFreeShipment(ShipmentType.REGISTERED)>style="display: none"</#if>>
-    Вы можете получить бесплатный номер для отслеживания (зарегистрированное отправление) добавив еще товара на
-    сумму
-    <@bg.ui.price 1000.0-shipmentRates.amount "b"/>
-</div>
-
 <div class="order">
 <table>
 <tr>
@@ -126,8 +120,7 @@
 
         <div class="form" <#if hasAddressBook && order.selectionTab>style="display: none" </#if>>
             <div class="desc">
-                Пожалуйста, введите ваше имя фамилия и адрес латинскими
-                буквами.
+                Пожалуйста, введите ваше имя, фамилию, номер телефона и адрес доставки.
             </div>
             <table style="width: auto">
                 <tr>
@@ -139,43 +132,45 @@
                             <@bg.ui.input path="order.firstName"/>
                             <@bg.ui.input path="order.lastName"/>
                         </div>
-                        <div class="sample">Например: Ivan Ivanov</div>
+                        <div class="sample">Например: Ивано Иван</div>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <label for="postcode">Индекс: </label>
+                        <label for="postcode">Телефон: </label>
                     </td>
                     <td>
                         <@bg.ui.input "order.postcode"/>
-                        <div class="sample">Например: 123321</div>
+                        <div class="sample">Например: 8-000-000-00-00</div>
                     </td>
                 </tr>
-                <tr>
-                    <td>
-                        <label for="region">Область/Регион: </label>
-                    </td>
-                    <td>
-                        <@bg.ui.input "order.region"/>
-                        <div class="sample">Например: Leningradskaya oblast, Gatchinskii raion</div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="city">Населенный пункт: </label>
-                    </td>
-                    <td>
-                        <@bg.ui.input "order.city"/>
-                        <div class="sample">Например: Gadchinskoye</div>
-                    </td>
-                </tr>
+            <#--
+                            <tr>
+                                <td>
+                                    <label for="region">Область/Регион: </label>
+                                </td>
+                                <td>
+                                    <@bg.ui.input "order.region"/>
+                                    <div class="sample">Например: Leningradskaya oblast, Gatchinskii raion</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="city">Населенный пункт: </label>
+                                </td>
+                                <td>
+                                    <@bg.ui.input "order.city"/>
+                                    <div class="sample">Например: Gadchinskoye</div>
+                                </td>
+                            </tr>
+            -->
                 <tr>
                     <td>
                         <label for="location">Адрес: </label>
                     </td>
                     <td>
                         <@bg.ui.input "order.location"/>
-                        <div class="sample">Например: ul. Tretiya sleva, d. 321/98, korp. 7, kv. 654</div>
+                        <div class="sample">Например: ул. Третья слева, д. 12, корп. 5, кв. 27</div>
                     </td>
                 </tr>
 
@@ -247,8 +242,9 @@
         </table>
     </div>
 
-    <div class="coupon">
-        <#assign discountAmount=0/>
+    <#assign discountAmount=0/>
+
+<#--    <div class="coupon">
         <#if coupon??>
             <#assign discountAmount=coupon.getDiscount(basket, catalog)/>
         </#if>
@@ -267,33 +263,7 @@
                 </td>
             </tr>
         </table>
-    </div>
-
-    <#if !addressBook??>
-        <div class="notification">
-            <table style="width: auto">
-                <tr>
-                    <td style="padding-top: 10px">
-                        <span class="tit">Извещения о заказе</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <@bg.ui.input path="order.notifications" fieldType="checkbox">
-                            <label for="notifications">Получать извещения о статусе заказа по электронной
-                                почте,
-                                связанной с PayPal аккаунтом.</label>
-
-                            <div class="sample">(мы оставляем за собой право связаться с вами по электронной почте
-                                в случае если у нас возникнут вопросы по заказу либо какие-либо сложности с его
-                                оформлением)
-                            </div>
-                        </@bg.ui.input>
-                    </td>
-                </tr>
-            </table>
-        </div>
-    </#if>
+    </div>-->
 
     <div class="total">
         <table class="payment">
@@ -334,10 +304,8 @@
             <tr>
                 <td colspan="2" valign="bottom" align="right">
                     <div class="paypal">
-                        <button type="submit" name="action" value="checkout"
-                                style="background: transparent; border: none">
-                            <img src="https://www.paypal.com/ru_RU/i/btn/btn_xpressCheckout.gif"
-                                 align="left">
+                        <button type="submit" name="action" value="checkout" style="padding: 7px">
+                            Оформить заказ. Наши менеджеры свяжутся с вами.
                         </button>
                     </div>
                 </td>
