@@ -9,4 +9,11 @@ public interface ShipmentManager {
 	ShipmentRates getShipmentRates(Basket basket);
 
 	double getShipmentCost(Basket basket, ShipmentType shipmentType);
+
+
+	double getFreeShipmentAmount();
+
+	double getDefaultShipmentCost();
+
+	double getRegisteredShipmentCost();
 }

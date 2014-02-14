@@ -61,7 +61,12 @@ public class OrderController extends AbstractController {
 	public String checkoutOrder(WebRequest request) {
 		final OrderCheckoutForm form = (OrderCheckoutForm) request.getAttribute(ORDER_CHECKOUT_FORM_NAME, RequestAttributes.SCOPE_REQUEST);
 		final Order order = orderManager.create(getPersonality(), form.getBasket(), form.getAddress(), form.getShipmentType(), form.isEnabledTracking());
-		return PayPalController.forwardCheckout(request, order);
+//		return PayPalController.forwardCheckout(request, order);
+
+		orderManager.accept(order.getId(), "", "", "", "");
+
+		request.setAttribute(ORDER_ID_PARAM, order.getId(), RequestAttributes.SCOPE_REQUEST);
+		return "forward:/warehouse/order/accepted";
 	}
 
 	@RequestMapping("/accepted")

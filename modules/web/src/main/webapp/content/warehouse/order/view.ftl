@@ -38,6 +38,8 @@
 <#assign steps=[OrderState.BILLING, OrderState.ACCEPTED, OrderState.PROCESSING, OrderState.SHIPPED, OrderState.CLOSED]/>
 
 <#assign alignedState=state/>
+<#--<#if alignedState == OrderState.ACCEPTED>-->
+<#--<#assign alignedState=OrderState.BILLING/>-->
 <#if alignedState == OrderState.SHIPPING || alignedState == OrderState.SUSPENDED>
     <#assign alignedState=OrderState.PROCESSING/>
 <#elseif alignedState == OrderState.FAILED || alignedState == OrderState.CANCELLED>
@@ -78,72 +80,6 @@
                 <@message code="order.status.${stateName}.description"/>
                 </div>
             </div>
-            <div style="display: inline-block; float: right">
-                <a id="showOrderLogs" href="#">история обработки</a>
-
-                <div id="orderLogs" style="display: none">
-                    <table>
-                    <#list order.orderLogs as l>
-                        <#assign state=l.orderState/>
-                        <#assign stateName=state.name()?lower_case/>
-                        <tr class="order-log">
-                            <td valign="top" nowrap="nowrap">${messageSource.formatDate(l.timeStamp, locale)}
-                                <br>${messageSource.formatTime(l.timeStamp, locale)}
-                            </td>
-                            <td valign="top">
-                                <div>
-                                    <@message code="order.status.${stateName}.label"/>
-                                </div>
-                                <div class="sample">
-                                    <@message code="order.status.${stateName}.description"/>
-                                </div>
-
-                                <#if l.commentary?has_content>
-                                    <div class="comment">
-                                    ${l.commentary}
-                                    </div>
-                                </#if>
-                            </td valign="top">
-                            <td valign="top" width="20%">
-                                <#if state.billing>
-                                    Номер счета:<br>${l.parameter!""}
-                                <#elseif state.accepted>
-                                    Номер платежа:<br>${l.parameter!""}
-                                <#elseif state.processing>
-                                    <#if l.parameter?has_content>
-                                        Номер комплектации:<br>${l.parameter}
-                                    </#if>
-                                <#elseif state.shipping>
-                                    <#if l.parameter?has_content>
-                                        Код почты Китая:<br><@bg.tracking.china l.parameter/>
-                                    </#if>
-                                <#elseif state.shipped>
-                                    <#if l.parameter?has_content>
-                                        Международный код:<br><@bg.tracking.international l.parameter/>
-                                    </#if>
-                                <#elseif  state.suspended>
-                                    <#if order.expectedResume??>
-                                        Приостановлен до:<br>
-                                    ${messageSource.formatDate(order.expectedResume, locale)}
-                                    </#if>
-                                <#elseif state.closed>
-                                    <#if l.parameter?has_content>
-                                        Дата вручения:<br>
-                                    ${messageSource.formatDate(l.parameter?number?long, locale)}
-                                    </#if>
-                                <#elseif  state.cancelled>
-                                    <#if l.parameter?has_content>
-                                        Код возврата средств:<br>${l.parameter}
-                                    </#if>
-                                <#elseif  state.failed>
-                                    Описание ошибки:<br>${l.parameter!""}
-                                </#if>
-                            </td>
-                        </tr>
-                    </#list>
-                    </table>
-                </div>
-            </div>
         </td>
     </tr>
 
@@ -157,6 +93,7 @@
         </td>
     </tr>
 </#if>
+<#--
 
 <#if order.paymentId?has_content && order.payer?has_content>
     <tr>
@@ -177,6 +114,8 @@
         </td>
     </tr>
 </#if>
+-->
+<#--
 
     <tr>
         <td valign="top" nowrap="nowrap">
@@ -197,6 +136,7 @@
             </div>
         </td>
     </tr>
+-->
 
     <tr>
         <td valign="top" nowrap="nowrap">
@@ -206,57 +146,12 @@
         <#assign address=shipment.address/>
         ${address.firstName} ${address.lastName}
             <br>
-        ${address.postcode}, ${address.region}, ${address.city}
+        ${address.phone}
             <br>
         ${address.location}
         </td>
     </tr>
 </table>
-
-<#if order.payer?has_content>
-    <#if !order.orderState.finalState>
-    <div class="info" style="padding: 5px; text-align: right">
-        <div class="operations">
-            <#if order.orderState==OrderState.SHIPPED>
-                <div class="confirm">
-                    <form action="/warehouse/order/status" method="post">
-                        <input type="hidden" name="order" value="${order.id}">
-                        <input type="hidden" name="email" value="${order.payer}">
-
-                        <button id="closeOrder" type="button">
-                            Подтвердить получения заказа
-                        </button>
-                    </form>
-                </div>
-            <#elseif !order.orderState.finalState>
-                <div class="tracking">
-                    <button type="button" value="true" <#if order.tracking>style="display: none"</#if>>Включить
-                        уведомления по e-mail
-                    </button>
-                    <button type="button" value="false" <#if !order.tracking>style="display: none"</#if>>
-                        Отключить
-                        уведомления по e-mail
-                    </button>
-                    <span class="sample">(${order.payer})</span>
-                </div>
-            </#if>
-        </div>
-    </div>
-    </#if>
-<#elseif order.orderState==OrderState.BILLING && personalityContext.hasRole("member")>
-<div class="info" style="padding: 5px; text-align: right">
-    <div class="confirm">
-        <form action="/privacy/order" method="post">
-            <input type="hidden" name="orderId" value="${order.id}"/>
-
-            <button name="action" value="remove"
-                    onclick="return confirm('Вы уверены что хотите удалить данный заказ?')">
-                Удалить заказ
-            </button>
-        </form>
-    </div>
-</div>
-</#if>
 
 <div class="basket">
 <#assign totalCount=0/>

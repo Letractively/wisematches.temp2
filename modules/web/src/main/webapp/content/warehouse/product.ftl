@@ -51,10 +51,6 @@
 
         <div class="articular">
             Артикул: <span class="sku" itemprop="sku">${sku}</span>
-        <@bg.security.authorized "moderator">
-            (<a href="${product.supplierInfo.referenceUrl.toExternalForm()}"
-                target="_blank">${product.supplierInfo.referenceCode}</a>)
-        </@bg.security.authorized>
         <#if (product.soldCount>0)>
             Продано: <span class="sold">${product.soldCount}</span>
         </#if>
@@ -82,28 +78,30 @@
         </div>
     </@bg.security.authorized>
 
-        <div class="stock">
-            <div class="ability">
-            <#switch stockInfo.stockState>
-                <#case StockState.IN_STOCK>
-                    В наличии, обычно отправлается в течении 2-3 рабочих дней
-                    <#break/>
-                <#case StockState.LIMITED_NUMBER>
-                    Торопитесь, осталось всего ${stockInfo.leftovers} штук!
-                    <#break/>
-                <#case StockState.SOLD_OUT>
-                    Товар распродан
-                    <#break/>
-                <#case StockState.OUT_STOCK>
-                    Нет на складе. Поступление
-                    ожидается ${messageSource.formatDate(stockInfo.restockDate, locale)}
-                    <#break/>
-            </#switch>
+    <#--
+            <div class="stock">
+                <div class="ability">
+                <#switch stockInfo.stockState>
+                    <#case StockState.IN_STOCK>
+                        В наличии, обычно отправлается в течении 2-3 рабочих дней
+                        <#break/>
+                    <#case StockState.LIMITED_NUMBER>
+                        Торопитесь, осталось всего ${stockInfo.leftovers} штук!
+                        <#break/>
+                    <#case StockState.SOLD_OUT>
+                        Товар распродан
+                        <#break/>
+                    <#case StockState.OUT_STOCK>
+                        Нет на складе. Поступление
+                        ожидается ${messageSource.formatDate(stockInfo.restockDate, locale)}
+                        <#break/>
+                </#switch>
+                </div>
+                <div class="shipment">
+                    Бесплатная доставка за 30-40 дней
+                </div>
             </div>
-            <div class="shipment">
-                Бесплатная доставка за 30-40 дней
-            </div>
-        </div>
+    -->
 
         <div class="props">
             <table>
@@ -142,12 +140,6 @@
                 <@bg.ui.price product.price.amount/>
                 <#if product.price.primordialAmount??><span
                         class="primordial">(<@bg.ui.price product.price.primordialAmount "g"/>)</span></#if>
-
-                    <span class="protection product-sprite">
-                        <a href="#" onclick="productController.showPriceProtection(); return false">
-                            <div class="image"></div><span>Ценовая
-                            защита</span></a>
-                    </span>
                 </div>
 
             <#if product.options?has_content>

@@ -15,6 +15,7 @@ public class AddressForm {
 	private String firstName;
 	private String lastName;
 	private String postcode;
+	private String phone;
 	private String region;
 	private String city;
 	private String location;
@@ -80,31 +81,41 @@ public class AddressForm {
 		this.location = location;
 	}
 
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
 	public AddressRecord toAddressRecord() {
-		return new AddressRecord(firstName, lastName, postcode, region, city, location);
+		return new AddressRecord(firstName, lastName, phone, postcode, region, city, location);
 	}
 
 	public Map<String, String> validate() {
 		final Map<String, String> res = new HashMap<>(7);
 		checkAddressField("firstName", firstName, res);
 		checkAddressField("lastName", lastName, res);
+		checkAddressField("phone", phone, res);
 		checkAddressField("location", location, res);
-		checkAddressField("region", region, res);
-		checkAddressField("city", city, res);
-		checkAddressField("postcode", postcode, res);
-
+//		checkAddressField("region", region, res);
+//		checkAddressField("city", city, res);
+//		checkAddressField("postcode", postcode, res);
+/*
 		if (!postcode.matches("\\d{6}+")) {
 			res.put("postcode", "address.err.postcode.format");
 		}
 
+*/
 		return res;
 	}
 
 	private void checkAddressField(String name, String value, Map<String, String> errors) {
 		if (value == null || value.trim().isEmpty()) {
 			errors.put(name, "address.err." + name + ".empty");
-		} else if (!asciiEncoder.canEncode(value)) {
-			errors.put(name, "address.err.ascii");
+//		} else if (!asciiEncoder.canEncode(value)) {
+//			errors.put(name, "address.err.ascii");
 		}
 	}
 }

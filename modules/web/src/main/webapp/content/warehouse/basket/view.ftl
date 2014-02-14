@@ -2,6 +2,7 @@
 <#-- @ftlvariable name="coupon" type="billiongoods.server.services.coupon.Coupon" -->
 <#-- @ftlvariable name="basket" type="billiongoods.server.services.basket.Basket" -->
 <#-- @ftlvariable name="shipmentRates" type="billiongoods.server.services.payment.ShipmentRates" -->
+<#-- @ftlvariable name="shipmentManager" type="billiongoods.server.services.payment.ShipmentManager" -->
 <#-- @ftlvariable name="order" type="billiongoods.server.web.servlet.mvc.warehouse.form.BasketCheckoutForm" -->
 
 <#include "/core.ftl"/>
@@ -80,6 +81,11 @@
     </tr>
 </table>
 
+<div class="unregistered" <#if shipmentRates.isFreeShipment(ShipmentType.REGISTERED)>style="display: none"</#if>>
+    Вы можете получить бесплатную доставку добавив еще товара на сумму
+    <@bg.ui.price shipmentManager.freeShipmentAmount-shipmentRates.amount "b"/>
+</div>
+
 <div class="order">
 <table>
 <tr>
@@ -107,7 +113,7 @@
                             </td>
                             <td>
                                 <label for="address${a.id}" style="font-weight: normal; white-space: normal">
-                                ${a.firstName} ${a.lastName}, ${a.postcode}, ${a.region}, ${a.city}, ${a.location}
+                                ${a.firstName} ${a.lastName}, ${a.phone}, ${a.location}
                                 </label>
                             </td>
                         </tr>
@@ -132,15 +138,15 @@
                             <@bg.ui.input path="order.firstName"/>
                             <@bg.ui.input path="order.lastName"/>
                         </div>
-                        <div class="sample">Например: Ивано Иван</div>
+                        <div class="sample">Например: Иван Иванов</div>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <label for="postcode">Телефон: </label>
+                        <label for="phone">Телефон: </label>
                     </td>
                     <td>
-                        <@bg.ui.input "order.postcode"/>
+                        <@bg.ui.input "order.phone"/>
                         <div class="sample">Например: 8-000-000-00-00</div>
                     </td>
                 </tr>
@@ -199,9 +205,10 @@
         <#assign freeRegisteredShipment=shipmentRates.isFreeShipment(ShipmentType.REGISTERED)/>
 
         <#if (bg.ui.actualValue==ShipmentType.FREE && freeRegisteredShipment)>
-            <#assign shipmentType= ShipmentType.REGISTERED/>
-        </#if>
+        <#assign shipmentType= ShipmentType.REGISTERED/>
+    </#if>
         <#assign shipmentCost=shipmentRates.getShipmentCost(shipmentType)/>
+<#--
         <table style="width: auto">
             <tr>
                 <td colspan="2">
@@ -210,16 +217,14 @@
             </tr>
             <tr>
                 <td style="padding-top: 3px">
-                    <input id="shipmentFree" type="radio" name="shipment"
+                    <input id="shipmentFree" type="hidden" name="shipment"
                            <#if freeRegisteredShipment>disabled="disabled"</#if>
                            value="${ShipmentType.FREE}"
                            <#if shipmentType==ShipmentType.FREE>checked="checked"</#if>/>
                 </td>
                 <td>
-                    <label for="shipmentFree">Обычная посылка (<span class="price"><span
-                            class="usd">Бесплатная доставка</span></span>
-                        за 30-40 рабочих
-                        дней)</label>
+                    <label for="shipmentFree">Курьерская доставка по Москве и области
+                        (<@bg.ui.price shipmentManager.registeredShipmentCost/>)</label>
                 </td>
             </tr>
             <tr>
@@ -240,6 +245,7 @@
                 </td>
             </tr>
         </table>
+-->
     </div>
 
     <#assign discountAmount=0/>
@@ -265,6 +271,10 @@
         </table>
     </div>-->
 
+    <div>
+        <span class="tit">Оформление заказа</span>
+    </div>
+
     <div class="total">
         <table class="payment">
             <tr class="payment-order">
@@ -275,35 +285,37 @@
                     <@bg.ui.price shipmentRates.amount "b"/>
                 </td>
             </tr>
-            <tr class="payment-shipment">
-                <td align="right">
-                    <span>Стоимость доставки:</span>
-                </td>
-                <td>
-                    <@bg.ui.price shipmentCost "b"/>
-                </td>
-            </tr>
-            <#if coupon??>
-                <tr class="payment-discount">
-                    <td align="right">
-                        <span>Скидка по купону:</span>
-                    </td>
-                    <td>
-                        <@bg.ui.price discountAmount "b"/>
-                    </td>
-                </tr>
-            </#if>
-            <tr class="payment-total">
-                <td align="right">
-                    <span>Общая стоимость:</span>
-                </td>
-                <td>
-                    <@bg.ui.price shipmentRates.amount+shipmentCost-discountAmount "r"/>
-                </td>
-            </tr>
+        <#--
+                    <tr class="payment-shipment">
+                        <td align="right">
+                            <span>Стоимость доставки:</span>
+                        </td>
+                        <td>
+                            <@bg.ui.price shipmentCost "b"/>
+                        </td>
+                    </tr>
+                    <#if coupon??>
+                        <tr class="payment-discount">
+                            <td align="right">
+                                <span>Скидка по купону:</span>
+                            </td>
+                            <td>
+                                <@bg.ui.price discountAmount "b"/>
+                            </td>
+                        </tr>
+                    </#if>
+                    <tr class="payment-total">
+                        <td align="right">
+                            <span>Общая стоимость:</span>
+                        </td>
+                        <td>
+                            <@bg.ui.price shipmentRates.amount+shipmentCost-discountAmount "r"/>
+                        </td>
+                    </tr>
+        -->
             <tr>
                 <td colspan="2" valign="bottom" align="right">
-                    <div class="paypal">
+                    <div>
                         <button type="submit" name="action" value="checkout" style="padding: 7px">
                             Оформить заказ. Наши менеджеры свяжутся с вами.
                         </button>

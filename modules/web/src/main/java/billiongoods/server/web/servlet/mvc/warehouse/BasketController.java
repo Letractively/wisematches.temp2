@@ -238,6 +238,7 @@ public class BasketController extends AbstractController {
 
 	private String prepareBasketView(Basket basket, BasketCheckoutForm form, Model model) {
 		model.addAttribute("basket", basket);
+		model.addAttribute("shipmentManager", shipmentManager);
 
 		if (basket != null) {
 			final Coupon coupon = couponManager.getCoupon(basket.getCoupon());
