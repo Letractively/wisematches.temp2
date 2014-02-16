@@ -182,9 +182,11 @@
       <module name="scribble" target="1.7" />
       <module name="services" target="1.7" />
       <module name="web" target="1.7" />
+      <module name="zz" target="1.7" />
     </bytecodeTargetLevel>
   </component>
   <component name="CopyrightManager" default="">
+    <module2copyright />
     <LanguageOptions name="JAVA">
       <option name="fileTypeOverride" value="3" />
     </LanguageOptions>
