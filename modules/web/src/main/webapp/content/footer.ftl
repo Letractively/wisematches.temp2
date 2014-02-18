@@ -7,7 +7,6 @@
                     <ul class="footer-info-list">
                         <li><a href="/assistance/shipping">Доставка товара</a></li>
                         <li><a href="/assistance/payment">Способы оплаты</a></li>
-                        <li><a href="/assistance/paypal">Работа с PayPal</a></li>
                         <li><a href="/assistance/warranty">Гарантия и возврат</a></li>
                         <li><a href="/assistance/customs">Таможенные сборы</a></li>
                     </ul>
@@ -48,7 +47,7 @@
         </tr>
         <tr>
             <td align="right">
-                © 2014 ЭкоЕшка
+                © 2014 ЭкоЕжка
             </td>
         </tr>
     </table>

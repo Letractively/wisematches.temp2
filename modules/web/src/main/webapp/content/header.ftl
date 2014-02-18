@@ -8,7 +8,7 @@
                     <img alt="logo" src="<@bg.ui.static "images/logo.png"/>" style="vertical-align: bottom"/>
 
                     <span class="first-letter">Э</span><span>ко</span><span
-                        class="first-letter">Е</span><span>шка</span>
+                        class="first-letter">Е</span><span>жка</span>
                 </a>
             </div>
         </td>
@@ -39,7 +39,7 @@
                 <div><a href="/assistance">Помощь</a></div>
 
                 <div class="divider">|</div>
-                <div><b><a href="/assistance/callback">Заказать обратный звонок</a></b></div>
+                <div><b><a href="/assistance/callback">Заказать обратный звонок</a></b>Б</div>
             </div>
         </td>
     </tr>

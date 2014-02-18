@@ -347,7 +347,7 @@ public class ProductMaintainController extends AbstractController {
 		return responseFactory.success(symbolicConverter.generateSymbolic(name));
 	}
 
-	private Map<Attribute, String> createAttributesMap(Category category) {
+	protected static Map<Attribute, String> createAttributesMap(Category category) {
 		final Map<Attribute, String> values = new HashMap<>();
 		Category ct = category;
 		while (ct != null) {
