@@ -458,78 +458,8 @@ var attributes = {
 </#list>
 };
 
-<#if form.id?has_content>
 var showCategoryEditor = function () {
     $("#categoryDiv>div").toggle();
-};
-
-var loadSupplierDescription = function () {
-    var siEl = $("#supplierInfo");
-    var dataEl = siEl.find(".data");
-    var actionEl = siEl.find(".action span");
-
-    dataEl.html('');
-    actionEl.toggle();
-    $.post("/maintain/product/loadSupplierInfo.ajax?id=${form.id}")
-            .done(function (response) {
-                if (response.success) {
-                    var data = response.data;
-
-                    var info = "";
-
-                    info += "<table>";
-                    if (data.price != null) {
-                        info += "  <tr><td><label>Цена:</label></td><td>" + data.price.amount + " (" + data.price.primordialAmount + ")</td></tr>";
-                    }
-
-                    if (data.stockInfo != null) {
-                        info += "  <tr><td><label>Доступность:</label></td><td>";
-
-                        if (data.stockInfo.leftovers != null) {
-                            info += "осталось " + data.stockInfo.leftovers;
-                        } else if (data.stockInfo.restockDate != null) {
-                            info += "дата поставки " + data.stockInfo.restockDate;
-                        } else {
-                            info += "доступен";
-                        }
-                        info += "</td></tr>";
-                    }
-
-                    $.each(data.parameters, function (key, value) {
-                        info += "  <tr>";
-                        info += "    <td><label>" + key + "</label></td>";
-
-                        var vals = '';
-                        $.each(value, function (i, v) {
-                            var items = v.split('+');
-                            $.each(items, function (i, v) {
-                                var cv = colors[v.toLowerCase()];
-                                vals += cv == undefined ? v : cv;
-                                if (i != items.length - 1) {
-                                    vals += '+';
-                                }
-                            });
-                            if (i != value.length - 1) {
-                                vals += ';';
-                            }
-                        });
-                        info += "    <td>" + vals + "</td>";
-                        info += "  </tr>";
-                    });
-                    info += "</table>";
-                    dataEl.html(info);
-                    actionEl.toggle();
-                    bg.ui.unlock(actionEl);
-                } else {
-                    actionEl.toggle();
-                    bg.ui.unlock(actionEl, response.message, true);
-                }
-            })
-            .fail(function (jqXHR, textStatus, errorThrown) {
-                actionEl.toggle();
-                bg.ui.unlock(actionEl, "По техническим причинам сообщение не может быть отправлено в данный момент. " +
-                        "Пожалуйста, попробуйте отправить сообщение позже.", true);
-            });
 };
 
 var addOption = function () {
@@ -578,9 +508,9 @@ var addRelationship = function () {
     var tr = $("<tr></tr>");
 
     var select = '<select name="relationshipTypes">';
-    <#list RelationshipType.values() as t>
-        select += '<option value="${t.name()}"> <@message code="relationship.${t.name()?lower_case}.label"/>';
-    </#list>
+<#list RelationshipType.values() as t>
+    select += '<option value="${t.name()}"> <@message code="relationship.${t.name()?lower_case}.label"/>';
+</#list>
     select += '</select>';
 
     var attrs = $("<td></td>").html(select);
@@ -593,7 +523,6 @@ var addRelationship = function () {
 var removeRelationship = function () {
     $(this).parent().parent().remove();
 };
-</#if>
 
 var recalculatePrice = function (val) {
     var v = parseFloat(val);

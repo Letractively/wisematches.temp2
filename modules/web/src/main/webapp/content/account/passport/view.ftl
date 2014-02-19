@@ -61,7 +61,7 @@
                 <div class="cnt">
                     <a href="/account/passport/password">Сменить пароль</a>
                     <br>
-                    <span class="sample">Храните в тайне ваш пароль на BillionGoods</span>
+                    <span class="sample">Храните в тайне ваш пароль на ЭкоЕжка</span>
                 </div>
 
             <#--

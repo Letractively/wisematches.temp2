@@ -74,7 +74,7 @@ ${price.amount?string("0.00")} (<#if price.primordialAmount??>${price.primordial
         <#list context.updatedProducts as r>
             <tr>
                 <td valign="top">
-                    <a href="http://www.billiongoods.ru/warehouse/product/${r.product.id}">${messageSource.getProductCode(r.product.id)}</a>
+                    <a href="http://www.ecoezhka.ru/warehouse/product/${r.product.id}">${messageSource.getProductCode(r.product.id)}</a>
                 </td>
                 <#if r.oldPrice.equals(r.newPrice)>
                     <td colspan="3">
@@ -144,7 +144,7 @@ ${price.amount?string("0.00")} (<#if price.primordialAmount??>${price.primordial
         <#list context.brokenProducts as b>
             <tr>
                 <td>
-                    <a href="http://www.billiongoods.ru/maintain/product?id=${b.id}">${messageSource.getProductCode(b.id)}</a>
+                    <a href="http://www.ecoezhka.ru/maintain/product?id=${b.id}">${messageSource.getProductCode(b.id)}</a>
                 </td>
                 <td>
                     <a href="${b.supplierInfo.referenceUrl.toString()}">${b.supplierInfo.referenceCode}</a>

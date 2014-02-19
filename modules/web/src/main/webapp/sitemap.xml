@@ -6,49 +6,49 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
     <url>
-        <loc>http://www.billiongoods.ru/</loc>
+        <loc>http://www.ecoezhka.ru/</loc>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
 
     <url>
-        <loc>http://www.billiongoods.ru/warehouse/arrivals</loc>
+        <loc>http://www.ecoezhka.ru/warehouse/arrivals</loc>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
 
     <url>
-        <loc>http://www.billiongoods.ru/assistance</loc>
+        <loc>http://www.ecoezhka.ru/assistance</loc>
         <changefreq>monthly</changefreq>
     </url>
 
     <url>
-        <loc>http://www.billiongoods.ru/assistance/about</loc>
+        <loc>http://www.ecoezhka.ru/assistance/about</loc>
         <changefreq>monthly</changefreq>
     </url>
 
     <url>
-        <loc>http://www.billiongoods.ru/assistance/shipping</loc>
+        <loc>http://www.ecoezhka.ru/assistance/shipping</loc>
         <changefreq>monthly</changefreq>
     </url>
 
     <url>
-        <loc>http://www.billiongoods.ru/assistance/warranty</loc>
+        <loc>http://www.ecoezhka.ru/assistance/warranty</loc>
         <changefreq>monthly</changefreq>
     </url>
 
     <url>
-        <loc>http://www.billiongoods.ru/assistance/payment</loc>
+        <loc>http://www.ecoezhka.ru/assistance/payment</loc>
         <changefreq>monthly</changefreq>
     </url>
 
     <url>
-        <loc>http://www.billiongoods.ru/assistance/customs</loc>
+        <loc>http://www.ecoezhka.ru/assistance/customs</loc>
         <changefreq>monthly</changefreq>
     </url>
 
     <url>
-        <loc>http://www.billiongoods.ru/assistance/contacts</loc>
+        <loc>http://www.ecoezhka.ru/assistance/contacts</loc>
         <changefreq>monthly</changefreq>
     </url>
 </urlset>

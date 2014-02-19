@@ -43,7 +43,7 @@
     <div style="text-align: center; font-size: 18px">Мы практически закончили</div>
 
     <div style="padding-top: 10px; padding-bottom: 10px">
-        Продолжив, вы сможете входить в интернет-магазин BillionGoods без ввода пароля, при помощи
+        Продолжив, вы сможете входить в интернет-магазин ЭкоЕжка без ввода пароля, при помощи
         профиля
         <span style="font-size: 16px">
         <i class="social-icon-16 social-icon-${provider}"

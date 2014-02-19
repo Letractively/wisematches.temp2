@@ -39,7 +39,8 @@
                 <div><a href="/assistance">Помощь</a></div>
 
                 <div class="divider">|</div>
-                <div><b><a href="/assistance/callback">Заказать обратный звонок</a></b>Б</div>
+                <div><b><a href="/assistance/contacts#section2">Заказать обратный звонок</a></b><br><b>с 09:00 до
+                    20:00</b></div>
             </div>
         </td>
     </tr>

@@ -59,17 +59,17 @@
 <div id="supportQuestionForm" class="question" style="display: none;">
     <form>
         <div class="email">
-            <div class="label"><label for="email">Ваша электронная почта:</label></div>
+            <div class="label"><label for="email">Номер телефона / эл. почта:</label></div>
             <div class="input"><input id="email" type="text" name="email"/></div>
         </div>
 
         <div class="name">
-            <div class="label"><label for="name">Ваше имя:</label></div>
+            <div class="label"><label for="name">Имя для обращения:</label></div>
             <div class="input"><input id="name" type="text" name="name"/></div>
         </div>
 
         <div class="message">
-            <div class="label"><label for="message">Ваше сообщение:</label></div>
+            <div class="label"><label for="message">Вопрос:</label></div>
             <div class="input"><textarea id="message" name="message" rows="10"></textarea></div>
         </div>
 

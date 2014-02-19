@@ -680,7 +680,7 @@ bg.warehouse.ProductController = function () {
     this.showPriceProtection = function () {
         $('<div></div>').html("Мы заботимся о возможности предоставить нашим покупателям лучшие товары по наименьшим ценам. Если вы купили " +
                 "продукт и в течение 48 часов обнаружили, что его стоимость снизилась, мы вернем вам разницу. " +
-                "<br>Просто напищите нам письмо на наш адрес поддержки: <a href='mailto:support@billiongoods.ru'>support@billiongoods.ru</a>").dialog({
+                "<br>Просто напищите нам письмо на наш адрес поддержки: <a href='mailto:support@ecoezhka.ru'>support@ecoezhka.ru</a>").dialog({
             title: "Ценовая защита 48 часов",
             draggable: false,
             modal: true,

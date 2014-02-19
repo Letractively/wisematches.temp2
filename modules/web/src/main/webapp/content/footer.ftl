@@ -7,8 +7,8 @@
                     <ul class="footer-info-list">
                         <li><a href="/assistance/shipping">Доставка товара</a></li>
                         <li><a href="/assistance/payment">Способы оплаты</a></li>
-                        <li><a href="/assistance/warranty">Гарантия и возврат</a></li>
-                        <li><a href="/assistance/customs">Таможенные сборы</a></li>
+                    <#--<li><a href="/assistance/warranty">Гарантия и возврат</a></li>-->
+                    <#--<li><a href="/assistance/customs">Таможенные сборы</a></li>-->
                     </ul>
                 </div>
             </td>
@@ -26,7 +26,7 @@
 
             <td>
                 <div class="footer-info">
-                    <div class="footer-info-title">BillionGoods.ru</div>
+                    <div class="footer-info-title">EcoEzhka.ru</div>
                     <ul class="footer-info-list">
                         <li><a href="/assistance/about">О нас</a></li>
                         <li><a href="/assistance/">Центр Поддержки</a></li>
