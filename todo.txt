@@ -1,1 +1,4 @@
 Order: add notes field to basket
+
+Notification can't be processed: code=order.state,publisher=email
+billiongoods.server.services.notify.PublicationException: org.springframework.mail.MailSendException: Failed messages: javax.mail.internet.AddressException: Empty address in string ``''; message exceptions (1) are: Failed message 1: javax.mail.internet.AddressException: Empty address in string ``''

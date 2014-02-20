@@ -1,6 +1,7 @@
 <#-- @ftlvariable name="context" type="billiongoods.server.services.payment.Order" -->
 <p>
-    Получен новый заказ #${context.id} от ${context.payerName!context.payer}.
+<#assign address=context.shipment.address/>
+    Получен новый заказ #${context.id} от ${address.lastName!""} ${address.firstName!""}, тел. ${address.phone!""}.
 </p>
 
 <table>
