@@ -5,39 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dead97dc-1a23-4904-982b-27559c512bcc" name="Default" comment="+">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/web/src/main/webapp/favicon.ico" afterPath="$PROJECT_DIR$/modules/web/src/main/webapp/favicon.ico" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/web/src/main/webapp/favicon.png" afterPath="$PROJECT_DIR$/modules/web/src/main/webapp/favicon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/web/src/main/webapp/static/images/logo.png" afterPath="$PROJECT_DIR$/modules/web/src/main/webapp/static/images/logo.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/services/src/main/java/billiongoods/server/services/paypal/PayPalExpressCheckout.java" afterPath="$PROJECT_DIR$/modules/services/src/main/java/billiongoods/server/services/paypal/PayPalExpressCheckout.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/web/src/main/resources/i18n/assistance/about.properties" afterPath="$PROJECT_DIR$/modules/web/src/main/resources/i18n/assistance/about.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/web/src/main/webapp/content/account/social/association.ftl" afterPath="$PROJECT_DIR$/modules/web/src/main/webapp/content/account/social/association.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/web/src/main/webapp/static/js/billiongoods-4.5.0.js" afterPath="$PROJECT_DIR$/modules/web/src/main/webapp/static/js/billiongoods-4.5.0.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/web/src/main/resources/i18n/assistance/contacts.properties" afterPath="$PROJECT_DIR$/modules/web/src/main/resources/i18n/assistance/contacts.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/core/core.iml" afterPath="$PROJECT_DIR$/modules/core/core.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/services/src/main/resources/i18n/notify/account/created.ftl" afterPath="$PROJECT_DIR$/modules/services/src/main/resources/i18n/notify/account/created.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/config/development.properties" afterPath="$PROJECT_DIR$/resources/config/development.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/web/src/main/resources/i18n/exceptions.properties" afterPath="$PROJECT_DIR$/modules/web/src/main/resources/i18n/exceptions.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/web/src/main/webapp/content/footer.ftl" afterPath="$PROJECT_DIR$/modules/web/src/main/webapp/content/footer.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/web/src/main/webapp/content/assistance/general.ftl" afterPath="$PROJECT_DIR$/modules/web/src/main/webapp/content/assistance/general.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/web/src/main/webapp/content/header.ftl" afterPath="$PROJECT_DIR$/modules/web/src/main/webapp/content/header.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/config/integration.properties" afterPath="$PROJECT_DIR$/resources/config/integration.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/web/src/main/webapp/content/assistance/layout.ftl" afterPath="$PROJECT_DIR$/modules/web/src/main/webapp/content/assistance/layout.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/web/src/main/webapp/content/metrics.ftl" afterPath="$PROJECT_DIR$/modules/web/src/main/webapp/content/metrics.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/web/src/main/webapp/content/assistance/navigation.ftl" afterPath="$PROJECT_DIR$/modules/web/src/main/webapp/content/assistance/navigation.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/services/src/main/resources/i18n/notify.properties" afterPath="$PROJECT_DIR$/modules/services/src/main/resources/i18n/notify.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/web/src/main/resources/i18n/assistance/payment.properties" afterPath="$PROJECT_DIR$/modules/web/src/main/resources/i18n/assistance/payment.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/web/src/main/webapp/content/maintain/product.ftl" afterPath="$PROJECT_DIR$/modules/web/src/main/webapp/content/maintain/product.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/web/src/main/webapp/content/warehouse/product.ftl" afterPath="$PROJECT_DIR$/modules/web/src/main/webapp/content/warehouse/product.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/services/src/main/resources/i18n/notify/account/recovery.ftl" afterPath="$PROJECT_DIR$/modules/services/src/main/resources/i18n/notify/account/recovery.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/web/src/main/resources/i18n/assistance/shipping.properties" afterPath="$PROJECT_DIR$/modules/web/src/main/resources/i18n/assistance/shipping.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/web/src/main/webapp/sitemap.xml" afterPath="$PROJECT_DIR$/modules/web/src/main/webapp/sitemap.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/web/src/main/resources/i18n/account/status.properties" afterPath="$PROJECT_DIR$/modules/web/src/main/resources/i18n/account/status.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/web/src/main/resources/i18n/account/system.properties" afterPath="$PROJECT_DIR$/modules/web/src/main/resources/i18n/account/system.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/services/src/main/resources/i18n/notify/account/updated.ftl" afterPath="$PROJECT_DIR$/modules/services/src/main/resources/i18n/notify/account/updated.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/services/src/main/resources/i18n/notify/system/validation.ftl" afterPath="$PROJECT_DIR$/modules/services/src/main/resources/i18n/notify/system/validation.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/web/src/main/webapp/content/maintain/validation.ftl" afterPath="$PROJECT_DIR$/modules/web/src/main/webapp/content/maintain/validation.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/web/src/main/webapp/content/account/passport/view.ftl" afterPath="$PROJECT_DIR$/modules/web/src/main/webapp/content/account/passport/view.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zz.ipr" afterPath="$PROJECT_DIR$/zz.ipr" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/database/latest_patch.sql" afterPath="$PROJECT_DIR$/resources/database/latest_patch.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zz.iws" afterPath="$PROJECT_DIR$/zz.iws" />
     </list>
     <ignored path="application.iws" />
@@ -106,7 +74,7 @@
       <file leaf-file-name="latest_patch.sql" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/database/latest_patch.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="74" selection-start="491" selection-end="491" vertical-scroll-proportion="0.37080538" vertical-offset="0" max-vertical-offset="596">
+            <state line="13" column="44" selection-start="441" selection-end="441" vertical-scroll-proportion="0.37080538" vertical-offset="0" max-vertical-offset="596">
               <folding />
             </state>
           </provider>
@@ -151,7 +119,6 @@
         <option value="$PROJECT_DIR$/modules/services/src/test/java/billiongoods/server/services/notify/impl/MailSelectorOriginCenterTest.java" />
         <option value="$PROJECT_DIR$/modules/services/src/test/java/billiongoods/server/services/payment/impl/HibernateOrderManagerTest.java" />
         <option value="$PROJECT_DIR$/modules/services/src/test/java/billiongoods/server/services/address/impl/HibernateAddressBookManagerTest.java" />
-        <option value="$PROJECT_DIR$/resources/database/latest_patch.sql" />
         <option value="$PROJECT_DIR$/modules/web/src/main/java/billiongoods/server/web/servlet/mvc/privacy/form/AddressForm.java" />
         <option value="$PROJECT_DIR$/modules/web/src/main/webapp/content/warehouse/basket/view.ftl" />
         <option value="$PROJECT_DIR$/todo.txt" />
@@ -180,6 +147,7 @@
         <option value="$PROJECT_DIR$/modules/web/src/main/resources/i18n/assistance/shipping.properties" />
         <option value="$PROJECT_DIR$/modules/web/src/main/webapp/content/header.ftl" />
         <option value="$PROJECT_DIR$/modules/web/src/main/webapp/content/maintain/product.ftl" />
+        <option value="$PROJECT_DIR$/resources/database/latest_patch.sql" />
       </list>
     </option>
   </component>
@@ -1271,7 +1239,7 @@
       <workItem from="1392743135377" duration="1026000" />
       <workItem from="1392831428430" duration="13000" />
       <workItem from="1392831451356" duration="4329000" />
-      <workItem from="1392836141311" duration="3203000" />
+      <workItem from="1392836141311" duration="3888000" />
     </task>
     <task id="LOCAL-00001" summary="Release 5.0.0">
       <created>1363751984384</created>
@@ -1945,11 +1913,15 @@
       <created>1392521325181</created>
       <updated>1392521325181</updated>
     </task>
-    <option name="localTasksCounter" value="169" />
+    <task id="LOCAL-00169" summary="+">
+      <created>1392839640749</created>
+      <updated>1392839640749</updated>
+    </task>
+    <option name="localTasksCounter" value="170" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="922927000" />
+    <option name="totallyTimeSpent" value="923612000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -2402,16 +2374,13 @@
     <entry file="file://$PROJECT_DIR$/modules/web/src/main/webapp/content/maintain/product.ftl">
       <provider selected="true" editor-type-id="text-editor">
         <state line="457" column="8" selection-start="16160" selection-end="16160" vertical-scroll-proportion="-4.5" vertical-offset="7652" max-vertical-offset="11067">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="e#16202#16241#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/database/latest_patch.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="74" selection-start="491" selection-end="491" vertical-scroll-proportion="0.37080538" vertical-offset="0" max-vertical-offset="596">
+        <state line="13" column="44" selection-start="441" selection-end="441" vertical-scroll-proportion="0.37080538" vertical-offset="0" max-vertical-offset="596">
           <folding />
         </state>
       </provider>
